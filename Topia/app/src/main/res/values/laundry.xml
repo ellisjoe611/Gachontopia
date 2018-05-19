@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="laundry">
+        <item >지점을 선택하세요</item>
+        <item>강남구_푸른세탁</item>
+        <item>강동구_백광세탁</item>
+        <item>강북구_금성세탁</item>
+        <item>강서구_짱구세탁</item>
+        <item>관악구_영일세탁</item>
+        <item>광진구_유림세탁</item>
+        <item>구로구_한신세탁</item>
+        <item>금천구_나나세탁</item>
+        <item >노원구_매직크린</item>
+        <item >도봉구_백양세탁소</item>
+        <item>동대문구_부부수선세탁</item>
+        <item>동작구_더샵명품세탁</item>
+        <item>마포구_미도세탁소</item>
+        <item>서대문구_가재울세탁소</item>
+        <item>서초구_강남디오빌</item>
+        <item>성동구_한진세탁소</item>
+        <item>성북구_우리동네세탁소</item>
+        <item>송파구_파인애플세탁소</item>
+        <item>양천구_맨하탄명품세탁소</item>
+        <item>영등포구_선데이런드리</item>
+        <item>용산구_더센트럴명품세탁</item>
+        <item>은평구_화이트데이</item>
+        <item>종로구_세탁ok</item>
+        <item>중구_브라운스톤세탁</item>
+        <item>중량구_대주세탁</item>
+    </string-array>>
+</resources>

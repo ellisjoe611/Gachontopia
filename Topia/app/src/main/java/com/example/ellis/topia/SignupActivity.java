@@ -59,15 +59,16 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-        //나머지 DB명의 값들을 기입
-        phone = editText_newPhone.getText().toString();
-        password = editText_newPW.getText().toString();
-        home_addr = editText_newAddress.getText().toString();
-
 
         button_createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //나머지 DB명의 값들을 기입
+                phone = editText_newPhone.getText().toString();
+                password = editText_newPW.getText().toString();
+                home_addr = editText_newAddress.getText().toString();
+
                 if(foundEmpty()){
                     Toast.makeText(SignupActivity.this, "모든 부분을 채워주세요.", Toast.LENGTH_SHORT).show();
                 }

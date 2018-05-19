@@ -20,7 +20,8 @@ public class SignupRequest extends StringRequest {
         parameters.put("home_addr", home_addr);
     }
 
-    public Map<String, String> getParams() {
+    @Override
+    protected Map<String, String> getParams() {
         return parameters;
     }
 }

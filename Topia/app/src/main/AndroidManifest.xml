@@ -22,7 +22,9 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".OrderForClientActivity" />
         <activity android:name=".OrderForShopActivity" />
-        <activity android:name=".OrderForShopEditStatusActivity"></activity>
+        <activity android:name=".OrderForShopEditStatusActivity" />
+        <activity android:name=".reserve"></activity>
+        <activity android:name=".LookupActivity"></activity>
     </application>
 
 </manifest>
