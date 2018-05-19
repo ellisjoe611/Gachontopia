@@ -37,8 +37,8 @@ public class OrderForClientAdapter extends ArrayAdapter<Order> {
         if(itemView == null){
             itemView = activity.getLayoutInflater().inflate(resource, null);
         }
-
         Order item = getItem(position);
+
         if(item != null){
             TextView itemClientPhone = (TextView) itemView.findViewById(R.id.textView_item_clientPhone);
             TextView itemDateIn = (TextView) itemView.findViewById(R.id.textView_item_dateIn);

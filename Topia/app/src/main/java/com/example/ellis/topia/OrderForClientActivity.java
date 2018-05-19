@@ -17,7 +17,7 @@ public class OrderForClientActivity extends AppCompatActivity {
     ListView listView;
 
     AsyncHttpClient asyncHttpClient;
-    private final String URL_JSON = "";
+    private final String URL_JSON_ORDER = "http://ellisjoe.cafe24.com/getjson_order.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +46,6 @@ public class OrderForClientActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        asyncHttpClient.get(URL_JSON, response);
+        asyncHttpClient.get(URL_JSON_ORDER, response);
     }
 }
