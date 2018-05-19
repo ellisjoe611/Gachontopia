@@ -1,5 +1,6 @@
 package com.example.ellis.topia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +34,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.imageButton:
-                //
+                Intent intent =new Intent(MenuActivity.this,reserve.class);
                 break;
             case R.id.imageButton2:
                 //
