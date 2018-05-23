@@ -51,6 +51,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.imageButton:
+<<<<<<< HEAD
                 if(type.equalsIgnoreCase("client")) {
                     Intent intentToRequest = new Intent(getApplicationContext(), reserve.class);
                     intentToRequest.putExtra("phone", phone);
@@ -70,6 +71,15 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 }else {
                     Toast.makeText(this, "For clients only...", Toast.LENGTH_SHORT).show();
                 }
+=======
+                Intent intent =new Intent(MenuActivity.this,reserve.class);
+                startActivity(intent);
+                break;
+
+            case R.id.imageButton2:
+                Intent intent2 =new Intent(MenuActivity.this,LookupActivity.class);
+                startActivity(intent2);
+>>>>>>> b2882b049811e9e3bceee059473cfa6bc59d1c15
                 break;
 
             case R.id.imageButton3:     //여기는 사용자 페이지이므로, type = "client"만 접근 허용한다.
