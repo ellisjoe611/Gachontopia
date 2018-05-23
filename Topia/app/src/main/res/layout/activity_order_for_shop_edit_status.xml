@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     android:orientation="vertical"
+    android:background="@drawable/back2"
     tools:context=".OrderForShopEditStatusActivity">
 
     <LinearLayout
@@ -103,28 +104,28 @@
         android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/button_editStatus_onProcess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="세탁중" />
+            android:src="@drawable/load"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/button_editStatus_processComplete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="세탁완료" />
+            android:src="@drawable/complete" />
 
-        <Button
+        <ImageButton
             android:id="@+id/button_editStatus_deliveryComplete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="배달완료" />
+            android:src="@drawable/delivery"/>
     </LinearLayout>
 </LinearLayout>

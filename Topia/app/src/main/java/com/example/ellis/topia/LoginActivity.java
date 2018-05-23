@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -19,7 +20,7 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
-    Button button_signup, button_login;
+    ImageButton button_signup, button_login;
     EditText editText_phone, editText_pw;
     CheckBox checkBox_autoLogin;
 
@@ -34,6 +35,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         editText_phone = findViewById(R.id.editText_phone);
         editText_pw = findViewById(R.id.editText_pw);
         checkBox_autoLogin = findViewById(R.id.checkBox_autoLogin);
+
+        button_signup.setBackgroundDrawable(null);
+        button_login.setBackgroundDrawable(null);
 
         button_signup.setOnClickListener(this);
         button_login.setOnClickListener(this);

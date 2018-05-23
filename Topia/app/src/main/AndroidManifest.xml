@@ -6,11 +6,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/icon"
+        android:label="Gachon Topia"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +23,9 @@
         <activity android:name=".MenuActivity" />
         <activity android:name=".OrderForClientActivity" />
         <activity android:name=".OrderForShopActivity" />
-        <activity android:name=".OrderForShopEditStatusActivity"></activity>
+        <activity android:name=".OrderForShopEditStatusActivity" />
+        <activity android:name=".reserve"></activity>
+        <activity android:name=".LookupActivity"></activity>
     </application>
 
 </manifest>

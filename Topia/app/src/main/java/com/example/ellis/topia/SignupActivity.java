@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -24,7 +25,7 @@ public class SignupActivity extends AppCompatActivity {
             "songpa", "yangcheon", "yongdeungpo", "yongsan", "ennpyeong", "jongro", "joonggu", "joonglang"};
     EditText editText_newPhone, editText_newPW, editText_checkPW, editText_newAddress;
     Spinner spinner_newDistrict;
-    Button button_createAccount;
+    ImageButton button_createAccount;
 
     String phone, password, home_area, home_addr; //DB에 있는 변수 이름과 동일
     String type = "client"; //DB에 있는 변수 이름과 동일, 기본적인 회원 type = "client"
@@ -43,6 +44,8 @@ public class SignupActivity extends AppCompatActivity {
         spinner_newDistrict = findViewById(R.id.spinner_newDistrict);
         button_createAccount = findViewById(R.id.button_createAccount);
 
+        button_createAccount.setBackgroundDrawable(null);
+
         ArrayAdapter<String> districtAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, district);
         districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_newDistrict.setAdapter(districtAdapter);
@@ -59,15 +62,16 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-        //나머지 DB명의 값들을 기입
-        phone = editText_newPhone.getText().toString();
-        password = editText_newPW.getText().toString();
-        home_addr = editText_newAddress.getText().toString();
-
 
         button_createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //나머지 DB명의 값들을 기입
+                phone = editText_newPhone.getText().toString();
+                password = editText_newPW.getText().toString();
+                home_addr = editText_newAddress.getText().toString();
+
                 if(foundEmpty()){
                     Toast.makeText(SignupActivity.this, "모든 부분을 채워주세요.", Toast.LENGTH_SHORT).show();
                 }

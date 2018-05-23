@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton imageButton, imageButton2, imageButton3, imageButton4;
-    String phone, type, home_area, home_addr;
+    static String phone, type, home_area, home_addr;
 
     private long pressedTime;
 
@@ -31,6 +31,11 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         imageButton3 = findViewById(R.id.imageButton3);
         imageButton4 = findViewById(R.id.imageButton4);
 
+        imageButton.setBackgroundDrawable(null);
+        imageButton2.setBackgroundDrawable(null);
+        imageButton3.setBackgroundDrawable(null);
+        imageButton4.setBackgroundDrawable(null);
+
         imageButton.setOnClickListener(this);
         imageButton2.setOnClickListener(this);
         imageButton3.setOnClickListener(this);
@@ -46,11 +51,25 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.imageButton:
-                //
+                if(type.equalsIgnoreCase("client")) {
+                    Intent intentToRequest = new Intent(getApplicationContext(), reserve.class);
+                    intentToRequest.putExtra("phone", phone);
+                    intentToRequest.putExtra("type", type);
+                    intentToRequest.putExtra("home_area", home_area);
+                    intentToRequest.putExtra("home_addr", home_addr);
+                    startActivity(intentToRequest);
+                }else {
+                    Toast.makeText(this, "For clients only...", Toast.LENGTH_SHORT).show();
+                }
                 break;
 
             case R.id.imageButton2:
-                //
+                if(type.equalsIgnoreCase("client")) {
+                    Intent lookup = new Intent(getApplicationContext(), LookupActivity.class);
+                    startActivity(lookup);
+                }else {
+                    Toast.makeText(this, "For clients only...", Toast.LENGTH_SHORT).show();
+                }
                 break;
 
             case R.id.imageButton3:     //여기는 사용자 페이지이므로, type = "client"만 접근 허용한다.
@@ -59,7 +78,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                     intentToOrderForClient.putExtra("phone", phone);
                     intentToOrderForClient.putExtra("type", type);
                     intentToOrderForClient.putExtra("home_area", home_area);
-                    intentToOrderForClient.put
+                    intentToOrderForClient.putExtra("home_addr", home_addr);
                     startActivity(intentToOrderForClient);
                 }else {
                     Toast.makeText(this, "For clients only...", Toast.LENGTH_SHORT).show();
