@@ -10,16 +10,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class OrderForClientResponse extends AsyncHttpResponseHandler{
+public class OrderForShopResponse extends AsyncHttpResponseHandler {
     Activity activity;
-    OrderForClientAdapter adapter;
+    OrderForShopAdapter adapter;
     ProgressDialog dialog;
-    static String phone;
+    static String shop_area;
 
-    public OrderForClientResponse(Activity activity, OrderForClientAdapter adapter, String phone) {
+    public OrderForShopResponse(Activity activity, OrderForShopAdapter adapter, String shop_area) {
         this.activity = activity;
         this.adapter = adapter;
-        this.phone = phone;
+        this.shop_area = shop_area;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class OrderForClientResponse extends AsyncHttpResponseHandler{
     @Override
     public void onSuccess(String content) {
         try{
-            //First, get json array data from server via 'OrderForClientAdapter'
+            //First, get json array data from server via 'OrderForShopAdapter'
             JSONObject json = new JSONObject(content);
             JSONArray order = json.getJSONArray("order");
 
@@ -51,7 +51,7 @@ public class OrderForClientResponse extends AsyncHttpResponseHandler{
                 String dateOut = item.getString("date_out");
                 String status = item.getString("status");
 
-                if(clientPhone.equalsIgnoreCase(phone)){
+                if(shopArea.equalsIgnoreCase(shop_area)){
                     adapter.add(new Order(clientPhone, shopArea, homeAddress, dateIn, dateOut, status));
                 }
             }

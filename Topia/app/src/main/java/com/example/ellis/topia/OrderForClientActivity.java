@@ -1,5 +1,6 @@
 package com.example.ellis.topia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -18,11 +19,18 @@ public class OrderForClientActivity extends AppCompatActivity {
 
     AsyncHttpClient asyncHttpClient;
     private final String URL_JSON_ORDER = "http://ellisjoe.cafe24.com/getjson_order.php";
+    static String phone, type, home_area, home_addr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_for_client);
+
+        Intent intentFromMenu = getIntent();
+        phone = intentFromMenu.getStringExtra("phone");
+        type = intentFromMenu.getStringExtra("type");
+        home_area = intentFromMenu.getStringExtra("home_area");
+        home_addr = intentFromMenu.getStringExtra("home_addr");
 
         list = new ArrayList<Order>();
         adapter = new OrderForClientAdapter(this, R.layout.list_order, list);
@@ -31,7 +39,7 @@ public class OrderForClientActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         asyncHttpClient = new AsyncHttpClient();
-        response = new OrderForClientResponse(this, adapter);
+        response = new OrderForClientResponse(this, adapter, phone);
     }
 
     /**
@@ -46,6 +54,7 @@ public class OrderForClientActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        list.clear();
         asyncHttpClient.get(URL_JSON_ORDER, response);
     }
 }
