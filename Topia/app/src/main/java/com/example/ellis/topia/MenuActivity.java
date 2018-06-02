@@ -88,6 +88,10 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.imageButton4:     //여기는 관리자 페이지이므로, type = "shop"만 접근 허용한다.
                 if(type.equalsIgnoreCase("shop")) {
                     Intent intentToOrderForShop = new Intent(getApplicationContext(), OrderForShopActivity.class);
+                    intentToOrderForShop.putExtra("phone", phone);
+                    intentToOrderForShop.putExtra("type", type);
+                    intentToOrderForShop.putExtra("home_area", home_area);
+                    intentToOrderForShop.putExtra("home_addr", home_addr);
                     startActivity(intentToOrderForShop);
                 }else {
                     Toast.makeText(this, "세탁소 관리자만 접근 가능합니다...", Toast.LENGTH_SHORT).show();

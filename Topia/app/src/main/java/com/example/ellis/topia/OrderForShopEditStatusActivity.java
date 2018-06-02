@@ -1,6 +1,7 @@
 package com.example.ellis.topia;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -62,15 +63,15 @@ public class OrderForShopEditStatusActivity extends AppCompatActivity implements
         switch (v.getId()){
             case R.id.button_editStatus_onProcess:
                 statusUpdate = "세탁 진행중";
-                sms = "주문하진 빨래 진행중입니다. 완료하는 대로 알려드리겠습니다.";
+                sms = "고객님의 빨래 신청이 접수 되었습니다.";
                 break;
             case R.id.button_editStatus_processComplete:
                 statusUpdate = "세탁 완료";
-                sms = "주문하신 빨래 완료했습니다. 곧 귀하의 자택으로 배달됩니다.";
+                sms = "고객님이 신청하신 세탁을 완료하였습니다. 금일 귀하의 자택으로 배달될 예정 입니다.";
                 break;
             case R.id.button_editStatus_deliveryComplete:
                 statusUpdate = "배달 완료";
-                sms = "빨래 배달 완료되었습니다. 귀하주소:\n" + clientAddr;
+                sms = "고객님의 빨래를 배달 완료되었습니다. 귀하주소:\n" + clientAddr;
                 break;
         }
 
@@ -79,6 +80,7 @@ public class OrderForShopEditStatusActivity extends AppCompatActivity implements
         }
         else{
             //처리 상태 업데이트 시작
+            final String finalSms = sms;
             Response.Listener<String> responseListener = new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
@@ -87,6 +89,9 @@ public class OrderForShopEditStatusActivity extends AppCompatActivity implements
                         boolean success = jsonResponse.getBoolean("success");   //변수 이름: "success" (true / false)
                         if(success){
                             Toast.makeText(OrderForShopEditStatusActivity.this, "상태 수정 성공", Toast.LENGTH_SHORT).show();
+                            Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + clientPhone));
+                            smsIntent.putExtra("sms_body", finalSms);
+                            startActivity(smsIntent);
                             finish();
                         }else{
                             Toast.makeText(OrderForShopEditStatusActivity.this, "Error: 업데이트 실패..", Toast.LENGTH_SHORT).show();

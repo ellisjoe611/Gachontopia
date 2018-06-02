@@ -139,7 +139,7 @@ public class reserve extends AppCompatActivity {
                         }
                         break;
                 }
-                status="reserve complete";
+                status="접수 완료";
                 date_out = String.format("%d-%d-%d", mDate.getYear(),month, day);
 
                 Toast.makeText(getApplicationContext(), phone+" "+shop_area+" "+home_addr+" "+date_in+" "+date_out+" "+status, Toast.LENGTH_LONG).show();
@@ -162,9 +162,9 @@ public class reserve extends AppCompatActivity {
                             if(success){
                                 Toast.makeText(reserve.this,"정상적으로 접수 되었습니다.",Toast.LENGTH_LONG).show();
                                 //Toast.makeText(getApplicationContext(), phone+" "+shop_area+" "+home_addr+" "+date_in+" "+date_out+" "+status, Toast.LENGTH_LONG).show();
-                               finish();
+                                finish();
                             }else{
-                               // Toast.makeText(getApplicationContext(), phone+" "+shop_area+" "+home_addr+" "+date_in+" "+date_out+" "+status, Toast.LENGTH_LONG).show();
+                                // Toast.makeText(getApplicationContext(), phone+" "+shop_area+" "+home_addr+" "+date_in+" "+date_out+" "+status, Toast.LENGTH_LONG).show();
                                 Toast.makeText(reserve.this, "회원이 존재하지 않습니다.", Toast.LENGTH_SHORT).show();
                             }
 
@@ -179,7 +179,7 @@ public class reserve extends AppCompatActivity {
                 RequestQueue queue = Volley.newRequestQueue(reserve.this);
                 queue.add(reserveRequest);
 
-        }
+            }
 
         });
 

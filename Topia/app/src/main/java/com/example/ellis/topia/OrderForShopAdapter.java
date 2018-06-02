@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class OrderForShopAdapter extends ArrayAdapter<Order> {
 
     Activity activity;
     int resource;
+    String status;
 
     /**
      * Constructor
@@ -43,15 +45,28 @@ public class OrderForShopAdapter extends ArrayAdapter<Order> {
             TextView itemClientPhone = (TextView) itemView.findViewById(R.id.textView_item_clientPhone);
             TextView itemDateIn = (TextView) itemView.findViewById(R.id.textView_item_dateIn);
             TextView itemDateOut = (TextView) itemView.findViewById(R.id.textView_item_dateOut);
-            TextView itemStatus = (TextView) itemView.findViewById(R.id.textView_item_status);
+            ImageView itemStatus = (ImageView) itemView.findViewById(R.id.textView_item_status);
             TextView itemHomeAddress = (TextView) itemView.findViewById(R.id.textView_item_homeAddress);
 
             itemClientPhone.setText(item.getClientPhone());
             itemDateIn.setText(item.getDateIn());
             itemDateOut.setText(item.getDateOut());
-            itemStatus.setText(item.getStatus());
-            itemHomeAddress.setText(item.getHomeAddress());
 
+            status=item.getStatus();
+            if(status.equalsIgnoreCase("접수 완료")){
+                itemStatus.setImageResource(R.drawable.laundry_ing);
+            }
+            else if(status.equalsIgnoreCase("세탁 진행중")){
+                itemStatus.setImageResource(R.drawable.laundry_ing);
+            }
+            else if(status.equalsIgnoreCase("세탁 완료")){
+                itemStatus.setImageResource(R.drawable.laundry_finish);
+            }
+            else if(status.equalsIgnoreCase("배달 완료")){
+                itemStatus.setImageResource(R.drawable.delivery_finish);
+            }
+
+            itemHomeAddress.setText(item.getHomeAddress());
         }
 
         return itemView;
