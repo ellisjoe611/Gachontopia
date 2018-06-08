@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +20,7 @@ import org.json.JSONObject;
 public class OrderForShopEditStatusActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView textView_editStatus_phone, textView_editStatus_dateIn, textView_editStatus_dateOut, textView_editStatus_address, textView_editStatus_status;
-    Button button_editStatus_onProcess, button_editStatus_processComplete, button_editStatus_deliveryComplete;
+    ImageButton button_editStatus_onProcess, button_editStatus_processComplete, button_editStatus_deliveryComplete;
     static String clientPhone, dateIn, dateOut, clientAddr, shopArea, status;
 
     @Override

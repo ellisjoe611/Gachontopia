@@ -1,6 +1,7 @@
 package com.example.ellis.topia;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton imageButton, imageButton2, imageButton3, imageButton4;
+    ImageButton imageButton, imageButton2, imageButton3, imageButton4, imageButton5;
     static String phone, type, home_area, home_addr;
 
     private long pressedTime;
@@ -30,16 +31,19 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         imageButton2 = findViewById(R.id.imageButton2);
         imageButton3 = findViewById(R.id.imageButton3);
         imageButton4 = findViewById(R.id.imageButton4);
+        imageButton5 = findViewById(R.id.imageButton5);
 
         imageButton.setBackgroundDrawable(null);
         imageButton2.setBackgroundDrawable(null);
         imageButton3.setBackgroundDrawable(null);
         imageButton4.setBackgroundDrawable(null);
+        imageButton5.setBackgroundDrawable(null);
 
         imageButton.setOnClickListener(this);
         imageButton2.setOnClickListener(this);
         imageButton3.setOnClickListener(this);
         imageButton4.setOnClickListener(this);
+        imageButton5.setOnClickListener(this);
     }
 
     /**
@@ -64,12 +68,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.imageButton2:
-                if(type.equalsIgnoreCase("client")) {
-                    Intent lookup = new Intent(getApplicationContext(), LookupActivity.class);
-                    startActivity(lookup);
-                }else {
-                    Toast.makeText(this, "For clients only...", Toast.LENGTH_SHORT).show();
-                }
+                Intent lookup = new Intent(getApplicationContext(), LookupActivity.class);
+                startActivity(lookup);
                 break;
 
             case R.id.imageButton3:     //여기는 사용자 페이지이므로, type = "client"만 접근 허용한다.
@@ -97,6 +97,12 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(this, "세탁소 관리자만 접근 가능합니다...", Toast.LENGTH_SHORT).show();
                 }
                 
+                break;
+
+            case R.id.imageButton5:
+                String infoMessage = "세탁소 등록 문의:\n010-2479-5477\n월 39,800원으로 가천 토피아에 등록하세요!";
+                AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
+                builder.setMessage(infoMessage).setPositiveButton("알겠습니다!", null).create().show();
                 break;
         }
     }

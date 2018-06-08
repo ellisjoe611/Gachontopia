@@ -8,6 +8,14 @@
     android:background="@drawable/back"
     tools:context=".MenuActivity">
 
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="right"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/register_info_icon" />
+
     <ImageView
         android:id="@+id/imageView_main"
         android:layout_width="match_parent"

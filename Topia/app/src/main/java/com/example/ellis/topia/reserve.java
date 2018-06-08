@@ -63,6 +63,7 @@ public class reserve extends AppCompatActivity {
 
         mDate = (DatePicker) findViewById(R.id.datepicker);
         mTxtDate = (TextView) findViewById(R.id.txtdate);
+
         ImageButton reserve_btn=(ImageButton)findViewById(R.id.resrve_btn);
 
         reserve_btn.setBackgroundDrawable(null);
@@ -87,6 +88,7 @@ public class reserve extends AppCompatActivity {
                     }
 
                 });
+
 
 
         findViewById(R.id.btnnow).setOnClickListener(new View.OnClickListener() {

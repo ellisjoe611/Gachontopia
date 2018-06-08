@@ -1,17 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
-    <LinearLayout android:id="@+id/LinearLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
-        <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="6dp" android:stretchColumns="2,3">
-            <TableRow>
-                <TextView android:id="@+id/label1" android:text="지점선택 : " android:textSize="20dp"/>
-                <Spinner android:id="@+id/spinner" android:layout_width="match_parent" android:layout_height="wrap_content" android:entries="@array/laundry" android:textSize="20dp"/>
-            </TableRow>
-            <ImageView android:id="@+id/map" android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/basic"/>
-            <TableRow android:layout_width="212dp">
-                <TextView android:id="@+id/label2" android:text="상세주소 : " android:textSize="20dp"/>
-                <TextView android:id="@+id/address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="20dp"/>
-            </TableRow>
-            <ImageView android:id="@+id/cost" android:layout_width="200dp" android:layout_height="200dp" android:src="@drawable/basic"/>
-        </TableLayout>
-    </LinearLayout>
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <ScrollView android:orientation="vertical"
+
+    android:background="@drawable/sea"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <LinearLayout android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/LinearLayout">
+
+
+    <TableLayout android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="match_parent" android:stretchColumns="2,3" android:padding="6dp">
+
+
+    <TableRow>
+
+    <TextView android:id="@+id/label1" android:text="지점선택 : "/>
+
+    <Spinner android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/spinner" android:entries="@array/laundry"/>
+
+</TableRow>
+
+
+    <LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/boxMap" android:visibility="gone">
+
+    <fragment android:layout_height="300dp" android:layout_width="wrap_content" android:id="@+id/map2" class="com.google.android.gms.maps.SupportMapFragment"/>
+
+</LinearLayout>
+
+
+    <TableRow android:layout_width="212dp">
+
+    <TextView android:id="@+id/label2" android:text="상세주소 : "
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/address"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+</TableRow>
+
+    <ImageView android:layout_height="200dp" android:layout_width="200dp" android:id="@+id/cost" android:src="@drawable/basic"/>
+
+</TableLayout>
+
+</LinearLayout>
+
 </ScrollView>

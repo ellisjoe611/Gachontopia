@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2"
+    android:background="@drawable/sea"
     >
 
     <TextView
@@ -27,30 +28,44 @@
 
     </LinearLayout>
 
-    <TextView
-
-        android:id="@+id/txtdate"
-
-        android:layout_width="wrap_content"
-
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        android:textSize="8pt"
+        <TextView
 
-        android:text="빨래 신청 날짜"
+            android:id="@+id/txtdate"
 
-        />
-    <Button
+            android:layout_width="wrap_content"
 
-        android:id="@+id/btnnow"
+            android:layout_height="match_parent"
 
-        android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="빨래 신청 날짜"
+            android:textSize="8pt"
 
-        android:layout_height="wrap_content"
+            />
 
-        android:text="날짜 선택"
+        <Button
 
-        />
+            android:id="@+id/btnnow"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="right"
+
+            android:layout_weight="1"
+
+            android:text="신청 날짜 선택" />
+
+
+    </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,7 +78,7 @@
             android:layout_width="66dp"
             android:layout_height="match_parent"
             android:text="수령날짜"
-            android:textColor="@android:color/holo_blue_bright" />
+         />
 
         <TextView
             android:id="@+id/text3"
@@ -92,7 +107,7 @@
             android:layout_width="66dp"
             android:layout_height="match_parent"
             android:text="지점선택"
-            android:textColor="@android:color/holo_blue_bright" />
+             />
 
         <TextView
 
@@ -123,7 +138,7 @@
             android:layout_width="66dp"
             android:layout_height="50dp"
             android:text="주소확인"
-            android:textColor="@android:color/holo_blue_bright" />
+            />
 
         <TextView
             android:id="@+id/text5"
@@ -138,7 +153,7 @@
         android:id="@+id/resrve_btn"
         android:layout_width="409dp"
         android:layout_height="50dp"
-        android:gravity="center"
+        android:layout_gravity="center"
         android:src="@drawable/sign" />
 
 
